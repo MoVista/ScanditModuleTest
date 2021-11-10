@@ -1,0 +1,7 @@
+<Alloy>
+	<Window class="container">
+		<View id="scannerWrapper"/>
+		<Label id="openScanner" onClick="openScanner">Tap to open scanner</Label>
+		<Label id="closeScanner" onClick="closeScanner">Tap to close scanner</Label>
+	</Window>
+</Alloy>

@@ -1,0 +1,35 @@
+".container": {
+	backgroundColor:"white"
+}
+
+"Label": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#000"
+}
+
+"#scannerWrapper": {
+	top: 0,
+	height: "40%",
+	backgroundColor: 'gray',
+}
+
+"#openScanner": {
+	width: "80%",
+	bottom: 66,
+	height: 30,
+	backgroundColor: 'green',
+	font: {
+		fontSize: 12
+	}
+}
+
+"#closeScanner": {
+	width: "80%",
+	bottom: 20,
+	height: 30,
+	backgroundColor: 'red',
+	font: {
+		fontSize: 12
+	}
+}

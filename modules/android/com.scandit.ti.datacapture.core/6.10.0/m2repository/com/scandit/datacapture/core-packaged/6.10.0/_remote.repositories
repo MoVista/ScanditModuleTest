@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Mon Nov 01 11:01:55 UTC 2021
+core-packaged-6.10.0.pom>=
+core-packaged-6.10.0.aar>=

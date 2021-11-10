@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 6.10.0
+apiversion: 4
+architectures: arm64-v8a armeabi-v7a x86 x86_64
+description: Scandit Data Capture SDK for Appcelerator Titanium
+author: Scandit
+license: Apache-2.0
+copyright: Copyright (c) 2021- Scandit AG
+
+# these should not be edited
+name: scandit-titanium-datacapture-core
+moduleid: com.scandit.ti.datacapture.core
+guid: b4c5cd6e-d820-4216-8b8e-d3446df2b704
+platform: android
+minsdk: 9.3.0.GA
