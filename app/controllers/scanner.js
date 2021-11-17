@@ -66,8 +66,7 @@ function instantiateScanner() {
 
   dataCaptureView.addToContainer($.scannerContainer);
 
-  // const overlay = ScanditBarcode.BarcodeCaptureOverlay.withBarcodeCaptureForView(scanditBarcodeCapture, $.scannerContainer); // errors out with a "view.addOverlay is not a function" error
-  // dataCaptureView.addOverlay(overlay); // throws the same error as above
+  ScanditBarcode.BarcodeCaptureOverlay.withBarcodeCaptureForView(scanditBarcodeCapture, dataCaptureView);
 }
 
 if (Ti.Media.hasCameraPermissions()) {
