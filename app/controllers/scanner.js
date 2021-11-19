@@ -15,6 +15,9 @@ exports.close = function() {
   scanditBarcodeCapture.isEnabled = false;
   scanditCamera.switchToDesiredState(ScanditCore.FrameSourceState.Off);
   scanditBarcodeCapture.removeListener(scanditBarcodeCaptureListener);
+  
+  scanditContext.dispose();
+  
   $.scannerContainer.removeAllChildren();
 
   scanditListener = null;
