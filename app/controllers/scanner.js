@@ -32,21 +32,27 @@ exports.close = function() {
 
 function instantiateScanner() {
   scanditContext = ScanditCore.DataCaptureContext.forLicenseKey(scanditAPIKey);
+
   const settings = new ScanditBarcode.BarcodeCaptureSettings();
 	settings.enableSymbologies([
 			ScanditBarcode.Symbology.EAN13UPCA,
 	]);
 	settings.codeDuplicateFilter = 500;
+  settings.settingsForSymbology(ScanditBarcode.Symbology.EAN13UPCA).setExtensionEnabled("remove_leading_upca_zero", true);
+
+  const selectionSize = new ScanditCore.SizeWithUnit(
+    new ScanditCore.NumberWithUnit(0.9, ScanditCore.MeasureUnit.Fraction),
+    new ScanditCore.NumberWithUnit(0.05, ScanditCore.MeasureUnit.Fraction),
+  );
+  settings.locationSelection = ScanditCore.RectangularLocationSelection.withSize(selectionSize);
 
   scanditBarcodeCapture = ScanditBarcode.BarcodeCapture.forContext(scanditContext, settings);
+
   scanditBarcodeCaptureListener = {
 		didScan: (barcodeCapture, session) => {
 			const recognizedBarcodes = session.newlyRecognizedBarcodes;
 			console.warn("recognized barcodes count: " + recognizedBarcodes.length);
-
-			console.info("typeof recognizedBarcodes[0]._data: " + typeof recognizedBarcodes[0]._data);
-			console.info("untrimmed barcode: " + recognizedBarcodes[0]._data);
-			console.info("trimmed barcode: " + recognizedBarcodes[0]._data.substring(1, recognizedBarcodes[0]._data.length));
+			console.info("barcode: " + recognizedBarcodes[0]._data);
 		}
 	};
 	scanditBarcodeCapture.addListener(scanditBarcodeCaptureListener);

@@ -54,8 +54,8 @@
   <modules>
     <module platform="android">hyperloop</module>
     <module platform="iphone">hyperloop</module>
-    <module platform="android" version="6.10.0">com.scandit.ti.datacapture.core</module>
-    <module platform="android" version="6.10.0">com.scandit.ti.datacapture.barcode</module>
+    <module platform="android" version="6.11.0-beta.1">com.scandit.ti.datacapture.core</module>
+    <module platform="android" version="6.11.0-beta.1">com.scandit.ti.datacapture.barcode</module>
   </modules>
   <deployment-targets>
     <target device="android">true</target>
